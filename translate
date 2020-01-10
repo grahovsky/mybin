@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+text="$(xsel -o)"
+translate=`echo $text | trans :ru -no-ansi -b`   
+echo "$translate" | xclip -selection clipboard
+notify-send --icon=info "$text" "$translate"
